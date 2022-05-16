@@ -3,10 +3,20 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "start": "nx run-many --target=serve --all",
+    "workspace-lint": "nx workspace-lint",
+    "format:check": "nx format:check",
+    "format:write": "nx format:write",
+    "lint": "nx affected --target=lint --parallel=3",
+    "test": "nx affected --target=test --parallel=3 --ci --code-coverage",
+    "build": "nx affected --target=build --parallel=3"
   },
+  "pre-commit": [
+    "workspace-lint",
+    "format:check",
+    "lint",
+    "test"
+  ],
   "private": true,
   "devDependencies": {
     "@emotion/babel-plugin": "11.9.2",
@@ -42,6 +52,7 @@
     "eslint-plugin-react-hooks": "4.5.0",
     "jest": "27.5.1",
     "nx": "14.1.5",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.5.1",
     "react-test-renderer": "18.1.0",
     "ts-jest": "27.1.4",
