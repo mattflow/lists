@@ -6,6 +6,7 @@
     "start": "nx run-many --target=serve --all",
     "workspace-lint": "nx workspace-lint",
     "format:check": "nx format:check",
+    "format:write": "nx format:write",
     "lint": "nx affected --target=lint --parallel=3",
     "test": "nx affected --target=test --parallel=3 --ci --code-coverage",
     "build": "nx affected --target=build --parallel=3"
