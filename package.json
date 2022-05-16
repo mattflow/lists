@@ -15,8 +15,7 @@
     "workspace-lint",
     "format:check",
     "lint",
-    "test",
-    "build"
+    "test"
   ],
   "private": true,
   "devDependencies": {
