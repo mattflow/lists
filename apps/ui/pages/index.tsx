@@ -1,12 +1,12 @@
-import useSWR from 'swr'
+import useSWR from "swr";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json())
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export function Index() {
-  const { data, error } = useSWR('/api', fetcher)
+  const { data, error } = useSWR("/api", fetcher);
 
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
 
   return (
     <div>
