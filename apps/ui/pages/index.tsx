@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import axios from "axios";
 
-const fetcher = url => axios.get(url).then(res => res.data);
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 export function Index() {
   const { data, error } = useSWR("/api", fetcher);
